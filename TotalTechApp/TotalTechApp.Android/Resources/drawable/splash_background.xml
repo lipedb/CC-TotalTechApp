@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+    <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+         <color android:color="@color/colorSplashBackground"/>
+    </item>
+    <item android:gravity="center"
+          android:scaleHeight="50%"
+          android:scaleWidth="50%">
+        <bitmap
+            android:src="@drawable/logo"
+            android:tileMode="disabled"
+            android:gravity="center">
+        </bitmap>
+    </item>
+ </layer-list>

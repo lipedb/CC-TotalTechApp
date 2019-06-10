@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="TotalTechApp.Resources.Styles">
+
+    <Style x:Key="secureButtonStyle" TargetType="Button">
+        <Setter Property="BorderColor" Value="{DynamicResource TotalTechAppGreen}" />
+        <Setter Property="BorderRadius" Value="5" />
+        <Setter Property="TextColor" Value="White" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource TotalTechAppGreen}" />
+        <Setter Property="FontFamily" Value="{DynamicResource ForzaMedium}" />
+    </Style>
+    <Style x:Key="SafeAreaFooter" TargetType="BoxView">
+        <Setter Property="BackgroundColor" Value="Transparent" />
+        <Setter Property="HeightRequest" Value="34" />
+    </Style>
+</ResourceDictionary>

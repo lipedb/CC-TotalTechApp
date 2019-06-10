@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:localization="clr-namespace:TotalTechApp.Extensions;assembly=TotalTechApp"
+             xmlns:controls="clr-namespace:TotalTechApp.Controls;Assembly:TotalTechApp"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Class="TotalTechApp.Views.UserDetailPage">
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="FillAndExpand" Spacing="10">
+            <Label Text="{Binding Title}" FontSize="16" TextColor="White" VerticalTextAlignment="Center" />
+        </StackLayout>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <StackLayout 
+                Orientation="Vertical"
+                VerticalOptions="FillAndExpand" 
+                HorizontalOptions="FillAndExpand">
+                    <StackLayout BackgroundColor="#eee"
+                             Orientation="Vertical"
+                                 MinimumHeightRequest="300">
+                        <Grid RowSpacing="0"
+                          ColumnSpacing="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="3*"/>
+                            </Grid.ColumnDefinitions>
+                            <ffimageloading:CachedImage Grid.Column="0"
+                                                    HorizontalOptions="Center" 
+                                                    VerticalOptions="Center"
+                                                    WidthRequest="100" 
+                                                    HeightRequest="100"
+                                                    Source="{Binding Picture}" />
+                            <StackLayout Orientation="Vertical"
+                                     VerticalOptions="CenterAndExpand"
+                                     HorizontalOptions="FillAndExpand"
+                                     Grid.Column="1"
+                                     Padding="5,0,0,0">
+                                <Label Text="{Binding Name}"
+                               TextColor="#f35e20"
+                               HorizontalTextAlignment="Start"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical"
+                                     VerticalOptions="CenterAndExpand"
+                                     HorizontalOptions="FillAndExpand"
+                                     Grid.Column="2">
+                                <Label Text="{Binding Rating}"
+                                   HorizontalOptions="EndAndExpand"
+                                   TextColor="#503026"
+                                   VerticalOptions="Start"
+                                   VerticalTextAlignment="Center"/>
+
+                                <Label Text="{Binding Email}"
+                                   HorizontalOptions="EndAndExpand"
+                                   TextColor="Gray"
+                                   FontSize="8"
+                                   VerticalOptions="StartAndExpand"
+                                   Margin="0,1,0,1"/>
+                            </StackLayout>
+                        </Grid>
+                    </StackLayout>
+                    <StackLayout Orientation="Vertical"
+                                 Padding="10,0,0,0"
+                                        VerticalOptions="StartAndExpand"
+                                        HorizontalOptions="FillAndExpand">
+                        <Label Text="Adress"
+                                    HorizontalOptions="StartAndExpand"
+                                    TextColor="Green"
+                                        FontSize="18"
+                                    VerticalOptions="Start"
+                                    VerticalTextAlignment="Center"/>
+                        <StackLayout Orientation="Horizontal"
+                                        VerticalOptions="Start"
+                                        HorizontalOptions="FillAndExpand">
+                            <Label Text="Street:"
+                                            HorizontalOptions="Start"
+                                            TextColor="Gray"
+                                            FontSize="14"
+                                            VerticalOptions="Start"
+                                            VerticalTextAlignment="Center"
+                                            Margin="0,1,0,1"/>
+                            <Label Text="{Binding Adress}"
+                                            HorizontalOptions="StartAndExpand"
+                                            TextColor="Black"
+                                            FontSize="14"
+                                            VerticalOptions="StartAndExpand"
+                                            Margin="0,1,0,1"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal"
+                                                VerticalOptions="Start"
+                                                HorizontalOptions="FillAndExpand">
+                            <Label Text="City:"
+                                                    HorizontalOptions="Start"
+                                                    TextColor="Gray"
+                                                    FontSize="14"
+                                                    VerticalOptions="Start"
+                                                    VerticalTextAlignment="Center"
+                                                    Margin="0,1,0,1"/>
+                            <Label Text="{Binding City}"
+                                                    HorizontalOptions="StartAndExpand"
+                                                    TextColor="Black"
+                                                    FontSize="14"
+                                                    VerticalOptions="StartAndExpand"
+                                                    Margin="0,1,0,1"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal"
+                                                        VerticalOptions="Start"
+                                                        HorizontalOptions="FillAndExpand">
+                            <Label Text="State:"
+                                                            HorizontalOptions="Start"
+                                                            TextColor="Gray"
+                                                            FontSize="14"
+                                                            VerticalOptions="Start"
+                                                            VerticalTextAlignment="Center"
+                                                            Margin="0,1,0,1"/>
+                            <Label Text="{Binding State}"
+                                                            HorizontalOptions="StartAndExpand"
+                                                            TextColor="Black"
+                                                            FontSize="14"
+                                                            VerticalOptions="StartAndExpand"
+                                                            Margin="0,1,0,1"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal"
+                                                                VerticalOptions="Start"
+                                                                HorizontalOptions="FillAndExpand">
+                            <Label Text="Zip Code:"
+                                                                    HorizontalOptions="Start"
+                                                                    TextColor="Gray"
+                                                                    FontSize="14"
+                                                                    VerticalOptions="Start"
+                                                                    VerticalTextAlignment="Center"
+                                                                    Margin="0,1,0,1"/>
+                            <Label Text="{Binding Zip}"
+                                                                    HorizontalOptions="StartAndExpand"
+                                                                    TextColor="Black"
+                                                                    FontSize="14"
+                                                                    VerticalOptions="StartAndExpand"
+                                                                    Margin="0,1,0,1"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal"
+                                                                VerticalOptions="Start"
+                                                                HorizontalOptions="FillAndExpand">
+                            <Label Text="Phone:"
+                                                                    HorizontalOptions="Start"
+                                                                    TextColor="Gray"
+                                                                    FontSize="14"
+                                                                    VerticalOptions="Start"
+                                                                    VerticalTextAlignment="Center"
+                                                                    Margin="0,1,0,1"/>
+                            <Label Text="{Binding Phone}"
+                                                                    HorizontalOptions="StartAndExpand"
+                                                                    TextColor="Black"
+                                                                    FontSize="14"
+                                                                    VerticalOptions="StartAndExpand"
+                                                                    Margin="0,1,0,1"/>
+                        </StackLayout>
+                        <Label Text="Location"
+                                            HorizontalOptions="StartAndExpand"
+                                            TextColor="Green"
+                                                FontSize="18"
+                                            VerticalOptions="Start"
+                                            VerticalTextAlignment="Center"
+                                            Margin="0,1,0,1"/>
+                <WebView x:Name="webView" WidthRequest="300" HeightRequest="400" Source="{Binding UrlMaps}"/>
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

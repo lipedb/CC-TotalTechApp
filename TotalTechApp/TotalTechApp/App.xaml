@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<prism:PrismApplication 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    xmlns:prism="clr-namespace:Prism.DryIoc;assembly=Prism.DryIoc.Forms" 
+    xmlns:resources="clr-namespace:TotalTechApp.Resources;assembly=TotalTechApp"
+    xmlns:converters="clr-namespace:TotalTechApp.Converters;assembly=TotalTechApp"
+    x:Class="TotalTechApp.App">
+
+    <Application.Resources>
+        <!--  Application resource dictionary  -->
+        <ResourceDictionary>
+            <converters:InverseBooleanConverter x:Key="BooleanInverse" />
+
+            <!--Navigation bar style -->
+            <Style x:Key="NavigationPageTextStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource White}" />
+                <Setter Property="FontSize" Value="24" />
+                <Setter Property="Margin" Value="5,0,0,0" />
+            </Style>
+
+            <x:Double x:Key="OverlayHeight">500</x:Double>
+
+            <ResourceDictionary.MergedDictionaries>
+                <resources:Colors />
+                <resources:Styles />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+
+</prism:PrismApplication>

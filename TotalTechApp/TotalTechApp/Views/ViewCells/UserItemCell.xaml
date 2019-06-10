@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Class="TotalTechApp.Views.ViewCells.UserItemCell">
+  <ViewCell.View>
+        <StackLayout BackgroundColor="#eee"
+                     Orientation="Vertical">
+            <Grid RowSpacing="0"
+                  ColumnSpacing="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <ffimageloading:CachedImage Grid.Column="0"
+                                            HorizontalOptions="Center" 
+                                            VerticalOptions="Center"
+                                            WidthRequest="100" 
+                                            HeightRequest="100"
+                                            Source="{Binding Picture.Thumbnail}" />
+                <StackLayout Orientation="Vertical"
+                             VerticalOptions="CenterAndExpand"
+                             HorizontalOptions="FillAndExpand"
+                             Grid.Column="1"
+                             Padding="5,0,0,0">
+                    <Label Text="{Binding Name.First}"
+                       TextColor="#f35e20"
+                       HorizontalTextAlignment="Start"/>
+                    <Label Text="{Binding Name.Last}"
+                       TextColor="#f35e20"
+                       HorizontalTextAlignment="Start"/>
+                </StackLayout>
+                <StackLayout Orientation="Vertical"
+                             VerticalOptions="CenterAndExpand"
+                             HorizontalOptions="FillAndExpand"
+                             Grid.Column="2">
+                    <Label Text="{Binding Rating}"
+                           HorizontalOptions="EndAndExpand"
+                           TextColor="#503026"
+                           VerticalOptions="Start"
+                           VerticalTextAlignment="Center"/>
+
+                    <Label Text="{Binding Email}"
+                           HorizontalOptions="EndAndExpand"
+                           TextColor="Gray"
+                           FontSize="8"
+                           VerticalOptions="StartAndExpand"
+                           Margin="0,5,5,0"/>
+
+                    <Label Text="{Binding Location.Street}"
+                           HorizontalOptions="EndAndExpand"
+                           TextColor="Gray"
+                           FontSize="8"
+                           VerticalOptions="StartAndExpand"
+                           Margin="0,5,5,0"/>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </ViewCell.View>
+</ViewCell>

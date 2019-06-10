@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:controls="clr-namespace:TotalTechApp.Controls"
+             xmlns:extensions="clr-namespace:TotalTechApp.Extensions"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             xmlns:fftransformations="clr-namespace:FFImageLoading.Transformations;assembly=FFImageLoading.Transformations"
+             xmlns:behavior="clr-namespace:TotalTechApp.Behaviors;assembly=TotalTechApp"
+             xmlns:cell="clr-namespace:TotalTechApp.Views.ViewCells"
+             x:Class="TotalTechApp.Views.HomePage"
+             Title="{Binding Title}"
+             BackgroundColor="{StaticResource PaleGrey}">
+    <NavigationPage.TitleView>
+        <Grid VerticalOptions="FillAndExpand" 
+              HorizontalOptions="FillAndExpand"
+              Padding="0">
+            <Grid.Margin>
+                <OnPlatform x:TypeArguments="Thickness">
+                    <On Platform="iOS" Value="0,0,0,0" />
+                    <On Platform="Android" Value="0,0,0,0" />
+                </OnPlatform>
+            </Grid.Margin>
+            <Label TextColor="White"
+                   Margin="5,0,0,0"
+                   Text="🔁"
+                   FontSize="Medium"
+                   HorizontalOptions="Start"
+                   VerticalOptions="Center"
+                   HorizontalTextAlignment="Start"
+                   VerticalTextAlignment="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding SyncActionCommand}"
+                        NumberOfTapsRequired="1" />
+                </Label.GestureRecognizers>
+            </Label>
+            <Label TextColor="White"
+                   Text="Doctors"
+                   FontSize="Medium"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center">
+            </Label>
+            <Label TextColor="White"
+                   Text="➡️"
+                   FontSize="Medium"
+                   HorizontalOptions="End"
+                   VerticalOptions="Center"
+                   HorizontalTextAlignment="End"
+                   VerticalTextAlignment="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer
+                        Command="{Binding LogOutCommand}"
+                        NumberOfTapsRequired="1" /> 
+                </Label.GestureRecognizers>
+            </Label>
+        </Grid>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <Grid RowSpacing="0"
+              ColumnSpacing="0"
+              Margin="0,0,0,0"
+              Padding="0"
+              BackgroundColor="Transparent"
+              HorizontalOptions="FillAndExpand"
+              VerticalOptions="FillAndExpand">
+            <StackLayout Spacing="0"
+                      HorizontalOptions="FillAndExpand"
+                      VerticalOptions="FillAndExpand"
+                      Margin="0,0,0,0"
+                      Padding="0"
+                      BackgroundColor="White"
+                      Orientation="Vertical">
+                <ListView x:Name="UserListView"
+                              AutomationId="UserListView"
+                              HasUnevenRows="True"
+                              ItemsSource="{Binding UserList}"
+                              behavior:ItemTappedListViewBehavior.ItemTappedCommand="{Binding MenuItemSelectedCommand}"
+                              HorizontalOptions="FillAndExpand"
+                              VerticalOptions="FillAndExpand"
+                              CachingStrategy="RecycleElement"
+                              Margin="0"
+                              RowHeight="200">
+
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <cell:UserItemCell/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <StackLayout Spacing="0"
+                      IsVisible="{Binding GettingItens}"
+                      HorizontalOptions="FillAndExpand"
+                      VerticalOptions="FillAndExpand"
+                      Margin="0,0,0,0"
+                      Padding="0"
+                      BackgroundColor="White"
+                      Orientation="Vertical">
+                <Label Text="🕑"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       VerticalOptions="Center"
+                       FontSize="50"
+                       FontAttributes="None"
+                       Margin="0,20,0,0"
+                       TextColor="{StaticResource SteelGrey}" />
+                <Label Text="Getting information"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       VerticalOptions="Start"
+                       FontSize="20"
+                       FontAttributes="None"
+                       Margin="0,20,0,0"
+                       TextColor="{StaticResource SteelGrey}" />
+            </StackLayout>
+
+            <StackLayout Spacing="0"
+                      IsVisible="{Binding NoCahcheItens}"
+                      HorizontalOptions="FillAndExpand"
+                      VerticalOptions="FillAndExpand"
+                      Margin="0,0,0,0"
+                      Padding="0"
+                      BackgroundColor="White"
+                      Orientation="Vertical">
+                <Label Text="🚫"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       VerticalOptions="Center"
+                       FontSize="50"
+                       FontAttributes="None"
+                       Margin="0,20,0,0"
+                       TextColor="{StaticResource SteelGrey}" />
+                <Label Text="There is no Internet, not possible to get information"
+                       HorizontalOptions="Center"
+                       HorizontalTextAlignment="Center"
+                       VerticalOptions="Start"
+                       FontSize="20"
+                       FontAttributes="None"
+                       Margin="0,20,0,0"
+                       TextColor="{StaticResource SteelGrey}" />
+            </StackLayout>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

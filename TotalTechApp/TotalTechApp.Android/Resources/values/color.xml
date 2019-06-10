@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <!-- colorPrimary is used for the default action bar background -->
+  <color name="colorPrimary">#2196F3</color>
+  <!-- colorPrimaryDark is used for the status bar -->
+  <color name="colorPrimaryDark">#1976D2</color>
+  <!-- colorAccent is used as the default value for colorControlActivated
+    which is used to tint widgets -->
+  <color name="colorAccent">#FF4081</color>
+  <!-- colorSplashBackground is used for the default Splash background color -->
+  <color name="colorSplashBackground">#F1F3F7</color>
+  <!-- colorNavegationBarBackground is used for the default Splash background color -->
+  <color name="colorNavegationBarBackground">#FF1D1D1D</color>
+</resources>
